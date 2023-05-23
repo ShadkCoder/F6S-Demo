@@ -3,9 +3,6 @@
     <div>
         <MessageEntry v-for='item in  mockData' :mockData ="item"/>
     </div>
-    <div>
-       <MessageEntry v-for='item in  newdata' :mockData ="item"/>
-    </div>
   </div>
 </template>
 
@@ -17,14 +14,14 @@ import {conversation} from '../mockapi.js'
 const store = useStore()
 
 let mockData = JSON.parse(conversation)
-console.log(mockData)
+
 onMounted(() => {
 store.dispatch('setconversation')
 console.log(store.state.getData)
     })
 
 let newdata = store.getters.fetchData
- 
+console.log(newdata) 
     
 </script>
 
